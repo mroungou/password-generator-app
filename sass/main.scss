@@ -1,0 +1,39 @@
+@use 'fonts';
+@use 'colors' as c;
+@use 'variables';
+
+body {
+    font-family: "JetBrains Mono", serif;
+    background: c.$veryDarkGrey;
+    color: c.$almostWhite;
+    font-weight: 700;
+}
+
+main {
+    padding: 0 1rem;
+}
+
+h1 {
+    font-size: 1rem;
+    text-align: center;
+    color: c.$grey;
+    margin: 0 0 1rem;
+}
+
+// styles for where the generated password will be shown
+.output-div {
+    background: c.$darkGrey;
+    padding: 1.035rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    // the default styles of the generated password when no options are chosen
+    #output {
+        line-height: 31px;
+        font-size: 1.5rem;
+        opacity: 25%;
+    }
+}
+
+// styles for the form element
+

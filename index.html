@@ -3,27 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link rel="stylesheet" href="./dist/css/normalize.css">
+  <link rel="stylesheet" href="./dist/css/main.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <script src="./index.js" defer></script>
   <title>Password generator</title>
 </head>
 <body>
-
-  Password Generator
-
-  P4$5W0rD!
-
-  Character Length
-
-  Include Uppercase Letters
-  Include Lowercase Letters
-  Include Numbers
-  Include Symbols
-
-  Strength
-
-  Generate
-
+    <main>
+        <h1>Password Generator</h1>
+        <div class="output-div"><span class="output" id="output">P4$5W0rD!</span> <img src="./assets/images/icon-copy.svg" alt="Copy Password" class="copy" id="copy"></div>
+        <form action="" class="form" id="form">
+            <div class="char-slider">
+                <label for="slider">
+                    <input type="range" value="0" min="1" max="20" name="" id="slider">Character Length <span class="password-length" id="password-length"></span></input>
+                </label>
+            </div>
+            <div class="options">
+                <label for="" class="form-control">
+                    <input type="checkbox" value="uppercase">Include Uppercase Letters</input>
+                </label>
+                <label for="" class="form-control">
+                    <input type="checkbox" value="lowercase">Include Lowercase Letters</input>
+                </label>
+                <label for="" class="form-control">
+                    <input type="checkbox" name="" value="numbers" id="">Include Numbers</input>
+                </label>
+                <label for="" class="form-control">
+                    <input type="checkbox" name="" value="symbols" id="">Include Symbols</input>
+                </label>
+            </div>
+            <div class="strength-div">Strength <span class="strength-indicator" id="strength-indicator"></span></div>
+            <button class="submit" id="submit">Generate</button>
+        </form>
+    </main>
 </body>
 </html>
