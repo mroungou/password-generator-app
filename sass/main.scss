@@ -36,4 +36,153 @@ h1 {
 }
 
 // styles for the form element
+.form {
+    background: c.$darkGrey;
+    font-size: 1rem;
+}
+
+.char-slider {
+    p {
+        margin: 0 0 .5rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #password-length {
+        font-size: 1.5rem;
+        color: c.$neonGreen;
+    }
+
+    input[type="range"] {
+        // removing default appearance
+        appearance: none;
+        -webkit-appearance: none;
+
+        // implementing custom design
+        width: 100%;
+        cursor: pointer;
+        outline: none;
+        overflow: hidden;
+        height: .5rem;
+        background: c.$veryDarkGrey;
+
+        /* // styles for the track - browsers like chrome, safari etc
+        &::-webkit-slider-runnable-track {
+            height: .5rem;
+            background: c.$veryDarkGrey;
+        } */
+        
+       /*  // styles for the track for mozilla
+        
+        &::-moz-range-track {
+            height: .5rem;
+            background: c.$veryDarkGrey;
+        } */
+
+        // to change the style of the thumb all browsers except firefox
+        &::-webkit-slider-thumb {
+            // removing default styles 
+            appearance: none;
+            -webkit-appearance: none;
+            /* custom styles */
+            height: 28px;
+            width: 28px;
+            background: c.$almostWhite;
+            border-radius: 50%;
+            
+            /* // slider progress trick
+            box-shadow: -407px 0 0 400px c.$neonGreen; */
+            transition: .2s ease-in-out;
+
+            // styles for when you hover thumb
+            &:hover {
+                outline: 1px solid c.$neonGreen;
+                background: c.$veryDarkGrey;
+            }
+        }
+        
+        // thumb for firefox
+        &::-moz-range-thumb { 
+            width: 28px;
+            height: 28px;
+            background: c.$almostWhite;
+            border-radius: 50%;
+            
+            /* // slider progress trick
+            box-shadow: -407px 0 0 400px c.$neonGreen; */
+            transition: .2s ease-in-out;
+
+            // styles for when you hover thumb
+            &:hover {
+                outline: 1px solid c.$neonGreen;
+                background: c.$veryDarkGrey;
+            }
+        }
+
+        // focus and active styles for thumb
+
+        // all browsers except firefox
+        &:active::-webkit-slider-thumb, 
+        &:focus::-webkit-slider-thumb {
+            outline: 1px solid c.$neonGreen;
+            background: c.$veryDarkGrey;
+        }
+        
+        // mozilla 
+        
+        &:active::-moz-range-thumb,
+        &:focus::-moz-range-thumb {
+            outline: 1px solid c.$neonGreen;
+            background: c.$veryDarkGrey;
+        }
+    }
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 2rem;
+
+
+    .form-control {
+        display: grid;
+        grid-template-columns: 1rem auto;
+        gap: 1rem;
+    }
+
+    input[type="checkbox"] {
+        // removing default styles
+        -webkit-appearance: none;
+        appearance: none;
+        margin: 0;
+        background: c.$veryDarkGrey;
+        // custom styles for the checkbox - unchecked
+        width: 20px;
+        height: 20px;
+        border: 2.5px solid c.$almostWhite;
+
+        // styling checked
+        display: grid;
+        place-content: center;
+    }
+
+    input[type="checkbox"]::before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        transform: scale(0);
+        background: c.$neonGreen;
+        transition: .25s transform ease-in-out;
+        box-shadow: inset 1rem 1rem c.$veryDarkGrey;
+        // creating the checkbox
+        transform-origin: bottom left;
+        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    }
+    
+    input[type="checkbox"]:checked::before {
+        transform: scale(1);
+        border: 2px solid c.$neonGreen;
+    }
+}
 

@@ -28,4 +28,120 @@ h1 {
   line-height: 31px;
   font-size: 1.5rem;
   opacity: 25%;
+}
+
+.form {
+  background: rgb(36, 35, 44);
+  font-size: 1rem;
+}
+
+.char-slider p {
+  margin: 0 0 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.char-slider #password-length {
+  font-size: 1.5rem;
+  color: rgb(164, 255, 175);
+}
+.char-slider input[type=range] {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  height: 0.5rem;
+  background: rgb(24, 23, 31);
+  /* // styles for the track - browsers like chrome, safari etc
+  &::-webkit-slider-runnable-track {
+      height: .5rem;
+      background: c.$veryDarkGrey;
+  } */
+  /*  // styles for the track for mozilla
+
+   &::-moz-range-track {
+       height: .5rem;
+       background: c.$veryDarkGrey;
+   } */
+}
+.char-slider input[type=range]::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  /* custom styles */
+  height: 28px;
+  width: 28px;
+  background: rgb(230, 229, 234);
+  border-radius: 50%;
+  /* // slider progress trick
+  box-shadow: -407px 0 0 400px c.$neonGreen; */
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+.char-slider input[type=range]::-webkit-slider-thumb:hover {
+  outline: 1px solid rgb(164, 255, 175);
+  background: rgb(24, 23, 31);
+}
+.char-slider input[type=range]::-moz-range-thumb {
+  width: 28px;
+  height: 28px;
+  background: rgb(230, 229, 234);
+  border-radius: 50%;
+  /* // slider progress trick
+  box-shadow: -407px 0 0 400px c.$neonGreen; */
+  -moz-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+.char-slider input[type=range]::-moz-range-thumb:hover {
+  outline: 1px solid rgb(164, 255, 175);
+  background: rgb(24, 23, 31);
+}
+.char-slider input[type=range]:active::-webkit-slider-thumb, .char-slider input[type=range]:focus::-webkit-slider-thumb {
+  outline: 1px solid rgb(164, 255, 175);
+  background: rgb(24, 23, 31);
+}
+.char-slider input[type=range]:active::-moz-range-thumb, .char-slider input[type=range]:focus::-moz-range-thumb {
+  outline: 1px solid rgb(164, 255, 175);
+  background: rgb(24, 23, 31);
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+.options .form-control {
+  display: grid;
+  grid-template-columns: 1rem auto;
+  gap: 1rem;
+}
+.options input[type=checkbox] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  margin: 0;
+  background: rgb(24, 23, 31);
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid rgb(230, 229, 234);
+  display: grid;
+  place-content: center;
+}
+.options input[type=checkbox]::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  transform: scale(0);
+  background: rgb(164, 255, 175);
+  transition: 0.25s transform ease-in-out;
+  box-shadow: inset 1rem 1rem rgb(24, 23, 31);
+  transform-origin: bottom left;
+  -webkit-clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+          clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+.options input[type=checkbox]:checked::before {
+  transform: scale(1);
+  border: 2px solid rgb(164, 255, 175);
 }/*# sourceMappingURL=main.css.map */

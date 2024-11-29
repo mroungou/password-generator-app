@@ -15,8 +15,9 @@
         <div class="output-div"><span class="output" id="output">P4$5W0rD!</span> <img src="./assets/images/icon-copy.svg" alt="Copy Password" class="copy" id="copy"></div>
         <form action="" class="form" id="form">
             <div class="char-slider">
+                <p>Character Length <span class="password-length" id="password-length">0</span></p>
                 <label for="slider">
-                    <input type="range" value="0" min="1" max="20" name="" id="slider">Character Length <span class="password-length" id="password-length"></span></input>
+                    <input type="range" value="0" min="0" max="20" name="" id="slider" oninput="updateSlider()"></input>
                 </label>
             </div>
             <div class="options">
@@ -33,7 +34,7 @@
                     <input type="checkbox" name="" value="symbols" id="">Include Symbols</input>
                 </label>
             </div>
-            <div class="strength-div">Strength <span class="strength-indicator" id="strength-indicator"></span></div>
+            <div class="strength-div">Strength <div class="strength-indicator" id="strength-indicator"><span></span><span></span><span></span><span></span></div></div>
             <button class="submit" id="submit">Generate</button>
         </form>
     </main>
