@@ -7,10 +7,16 @@ body {
     background: c.$veryDarkGrey;
     color: c.$almostWhite;
     font-weight: 700;
+    height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 main {
+    display: block;
     padding: 0 1rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -22,16 +28,26 @@ h1 {
 
 // styles for where the generated password will be shown
 .output-div {
-    background: c.$darkGrey;
-    padding: 1.035rem 1.5rem;
     display: flex;
     justify-content: space-between;
-    align-content: center;
+    align-items: center;
+    background: c.$darkGrey;
+    padding: 1.035rem 1rem;
+    margin-bottom: .938rem;
     // the default styles of the generated password when no options are chosen
     #output {
         line-height: 31px;
         font-size: 1.5rem;
         opacity: 25%;
+        background: c.$darkGrey;
+        outline: none;
+        border: none;
+        width: 100%;
+    }
+
+    img {
+        width: 17.5px;
+        height: 20px;
     }
 }
 
@@ -39,9 +55,11 @@ h1 {
 .form {
     background: c.$darkGrey;
     font-size: 1rem;
+    padding: 1rem;
 }
 
 .char-slider {
+    margin-top: .438rem;
     p {
         margin: 0 0 .5rem;
         display: flex;
@@ -62,7 +80,6 @@ h1 {
         width: 100%;
         cursor: pointer;
         outline: none;
-        overflow: hidden;
         height: .5rem;
         background: c.$veryDarkGrey;
 
@@ -141,48 +158,112 @@ h1 {
 .options {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
-    margin-top: 2rem;
-
-
+    gap: 1.05rem;
+    margin-top: 2.5rem;
+  
     .form-control {
-        display: grid;
-        grid-template-columns: 1rem auto;
-        gap: 1rem;
+      display: grid;
+      grid-template-columns: 1rem auto;
+      column-gap: 1.5rem;
     }
 
+    label:hover {
+        cursor: pointer;
+    }
+  
     input[type="checkbox"] {
-        // removing default styles
-        -webkit-appearance: none;
-        appearance: none;
-        margin: 0;
-        background: c.$veryDarkGrey;
-        // custom styles for the checkbox - unchecked
-        width: 20px;
-        height: 20px;
-        border: 2.5px solid c.$almostWhite;
+      // Removing default styles
+      -webkit-appearance: none;
+      appearance: none;
+      margin: 0;
+      background: none;
+      width: 20px;
+      height: 20px;
+      border: 2.5px solid c.$almostWhite;
+      display: grid;
+      place-content: center;
 
-        // styling checked
-        display: grid;
-        place-content: center;
-    }
-
-    input[type="checkbox"]::before {
-        content: "";
-        width: 20px;
-        height: 20px;
-        transform: scale(0);
-        background: c.$neonGreen;
-        transition: .25s transform ease-in-out;
-        box-shadow: inset 1rem 1rem c.$veryDarkGrey;
-        // creating the checkbox
-        transform-origin: bottom left;
-        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-    }
-    
-    input[type="checkbox"]:checked::before {
-        transform: scale(1);
+      &:hover {
         border: 2px solid c.$neonGreen;
+        cursor: pointer;
+      }
+    }
+  
+    // Checked state with custom image
+    input[type="checkbox"]:checked {
+      border: none;
+      background: c.$neonGreen;  // background color when checked
+      transition: .25s ease-in-out;
+    }
+  
+    input[type="checkbox"]::before {
+      content: "";
+      width: 11.39px;  // Adjusting to fit in the box
+      height: 8px;
+      background: url('../../assets/images/icon-check.svg') no-repeat center center;
+      background-size: contain;
+      opacity: 0;   // Hidden by default
+      transition: opacity 0.25s ease-in-out;
+    }
+  
+    input[type="checkbox"]:checked::before {
+      opacity: 1;   // Show the image when checked
+    }
+}
+
+.strength-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    background: c.$veryDarkGrey;
+    color: c.$grey;
+    text-transform: uppercase;
+    font-size: 1.125rem;
+    padding: .75rem 1.105rem;
+
+    #level {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: c.$almostWhite;
+    }
+
+    .strength-indicator {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        // creating rectangles to indicate the strength of the password
+        span {
+            width: 10px;
+            height: 28px;
+            border: 2px solid c.$almostWhite;
+            box-sizing: border-box;
+        }
+    } 
+}
+
+button.submit {
+    margin-top: 1.2rem;
+    padding: 1.185rem 0;
+    background: c.$neonGreen;
+    box-sizing: border-box;
+    width: 100%;
+    text-transform: uppercase;
+    color: c.$darkGrey;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+
+    &:hover {
+        cursor: pointer;
+        background: none;
+        border: 1px solid c.$neonGreen;
+        color: c.$neonGreen;
+        // adding a filter to change the color on hover
+        img {
+            filter: brightness(0) saturate(100%) invert(97%) sepia(86%) saturate(682%) hue-rotate(53deg) brightness(106%) contrast(101%);
+        }
     }
 }
 
