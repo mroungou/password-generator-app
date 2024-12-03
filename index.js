@@ -16,7 +16,6 @@ const passwordGenerator = () => {
     let poolSize = 0
     let charactersChosen = ``
     let password = ''
-
     /* depending on the options selected by the user the chars to be used will be added
     for selection later */
     inputs.forEach(option => {
@@ -35,7 +34,6 @@ const passwordGenerator = () => {
         password += charactersChosen[randomIndex]
     }
 
-    console.log(poolSize)
     passwordStrength(password, poolSize)
 
     passwordDiv.innerText = password
@@ -56,30 +54,47 @@ L = length of the password
 
 E = L logbase2(R)
 
-0 -35 bits -> very weak
+0 - 35 bits -> very weak
 36 - 59 bits -> weak
 60 - 119 -> strong 
-120 + -> very strong
+120+ -> very strong
 */
 const passwordStrength = (userPassword, poolSize) => {
     const bitSize = userPassword.length * Math.log2(poolSize) //bit size calcs
 
     const strengthText = document.getElementById('text')
-    strengthText.innerText = ''
-    const strengthIndicator = document.getElementById('strength-indicator')
+    
+    strengthText.innerText = 
+        bitSize > 120 ? 'strong' :
+        bitSize > 60 ? 'medium' :
+        bitSize > 36 ? 'weak' : 'too weak!'
 
-    if (bitSize > 75) {
-        strengthText.innerText = 'strong'
-    } else if (bitSize > 50) {
-        strengthText.innerText = 'medium'
-    } else if (bitSize > 25) {
-        strengthText.innerText = 'weak'
-    } else if (bitSize < 25) {
-        strengthText.innerText = 'too weak!'
+    if (bitSize > 120) {
+        updateStrengthIndicator(4)
+    } else if (bitSize > 60) {
+        updateStrengthIndicator(3)
+    } else if (bitSize > 36) {
+       updateStrengthIndicator(2)
+    } else {
+        updateStrengthIndicator(1)
     }
-
 }
 
+const updateStrengthIndicator = (level = 0) => {
+    const strengthIndicator = document.getElementById('strength-indicator').querySelectorAll('span')
+
+    strengthIndicator.forEach(bar => {
+        bar.classList.remove('strength-very-weak', 'strength-weak', 'strength-medium', 'strength-strong')
+    })
+
+    for (let i = 0; i < level; i++) {
+        const bar = strengthIndicator[i]
+       
+        level === 1 ? bar.classList.add('strength-very-weak') :
+        level === 2 ? bar.classList.add('strength-weak') :
+        level === 3 ? bar.classList.add('strength-medium'): bar.classList.add('strength-strong')
+    }
+}
 
 const updateSlider = () => {
     const sliderMin = slider.min
@@ -100,7 +115,12 @@ updateSlider()
 document.getElementById('form').addEventListener('submit', (e) => {
     e.preventDefault()
 
-    passwordGenerator()
+    // covering case where a user doesn't choose an option
+    if([...inputs].some(input => input.checked)) {
+        passwordGenerator()
+    } else {
+        window.alert('Please select at leasy one option')
+    }
 })
 
 // copying the password generated 

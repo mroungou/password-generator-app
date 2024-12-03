@@ -234,11 +234,12 @@ h1 {
         align-items: center;
         gap: .5rem;
         // creating rectangles to indicate the strength of the password
-        span {
+        span.strength-bar {
             width: 10px;
             height: 28px;
             border: 2px solid c.$almostWhite;
             box-sizing: border-box;
+            transition: background-color .3s ease-in, border-color .3s ease-in;
         }
     } 
 }
@@ -267,8 +268,65 @@ button.submit {
     }
 }
 
+@media screen and (min-width: 768px) {
+    body {
+        align-items: baseline;
+        padding: 8.5rem 7.2rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin: 0 0 1.938rem;
+    }
+
+    .output-div {
+        margin-bottom: 1.5rem;
+
+        img {
+            width: 21px;
+            height: 24px;
+        }
+    }
+
+    .form {
+        font-size: 1.125rem;
+    }
+
+    .char-slider {
+
+        #password-length {
+            font-size: 2rem;
+        }
+    }
+
+    .options {
+        gap: 1.25rem;
+    }
+}
+
+// style for when password is generated and output to DOM
 .active {
     color: c.$almostWhite !important;
     opacity: 100% !important;
 }
 
+// styles for strength bars
+.strength-very-weak {
+    background: c.$red;
+    border: c.$red !important;
+}
+
+.strength-weak {
+    background: c.$orange;
+    border: c.$orange !important;
+}
+
+.strength-medium {
+    background-color: c.$yellow;
+    border: c.$yellow !important;
+}
+
+.strength-strong {
+    background-color: c.$neonGreen;
+    border-color: c.$neonGreen !important;
+}
