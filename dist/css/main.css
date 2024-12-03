@@ -222,4 +222,9 @@ button.submit:hover {
 }
 button.submit:hover img {
   filter: brightness(0) saturate(100%) invert(97%) sepia(86%) saturate(682%) hue-rotate(53deg) brightness(106%) contrast(101%);
+}
+
+.active {
+  color: rgb(230, 229, 234) !important;
+  opacity: 100% !important;
 }/*# sourceMappingURL=main.css.map */
