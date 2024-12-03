@@ -236,6 +236,7 @@ button.submit:hover img {
   }
   .output-div {
     margin-bottom: 1.5rem;
+    padding: 1.535rem 1rem;
   }
   .output-div img {
     width: 21px;
@@ -243,12 +244,24 @@ button.submit:hover img {
   }
   .form {
     font-size: 1.125rem;
+    padding: 1.8rem 1rem;
   }
   .char-slider #password-length {
     font-size: 2rem;
   }
   .options {
+    margin-top: 3rem;
     gap: 1.25rem;
+  }
+  .strength-div {
+    margin-top: 2.2rem;
+    padding: 1.375rem 1.905rem;
+  }
+  .strength-div #level {
+    font-size: 1.5rem;
+  }
+  button.submit {
+    margin-top: 2.2rem;
   }
 }
 .active {

@@ -281,6 +281,7 @@ button.submit {
 
     .output-div {
         margin-bottom: 1.5rem;
+        padding: 1.535rem 1rem;
 
         img {
             width: 21px;
@@ -290,6 +291,7 @@ button.submit {
 
     .form {
         font-size: 1.125rem;
+        padding: 1.8rem 1rem;
     }
 
     .char-slider {
@@ -300,7 +302,21 @@ button.submit {
     }
 
     .options {
+        margin-top: 3rem;
         gap: 1.25rem;
+    }
+
+    .strength-div {
+        margin-top: 2.2rem;
+        padding: 1.375rem 1.905rem;
+
+        #level {
+            font-size: 1.5rem;
+        }
+    }
+
+    button.submit {
+        margin-top: 2.2rem;
     }
 }
 
