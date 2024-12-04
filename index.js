@@ -129,4 +129,12 @@ document.getElementById('copy').addEventListener('click', () => {
     passwordDiv.innerText
     // copies the text to the clipboard
     navigator.clipboard.writeText(passwordDiv)
+
+    const copiedMessage = document.getElementById('copied-text');
+    copiedMessage.style.opacity = '1';    // Make the message visible
+    
+    // Hide the message after 2 seconds
+    setTimeout(() => {
+        copiedMessage.style.opacity = '0';
+    }, 2000);  // 2-second delay
 })

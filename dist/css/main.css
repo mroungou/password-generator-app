@@ -40,6 +40,18 @@ h1 {
   border: none;
   width: 100%;
 }
+.output-div .copied {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.output-div .copied #copied-text {
+  text-transform: uppercase;
+  color: rgb(164, 255, 175);
+  font-size: 1.125rem;
+  opacity: 0;
+  transition: 0.25s opacity ease-in;
+}
 .output-div img {
   width: 17.5px;
   height: 20px;
@@ -262,6 +274,11 @@ button.submit:hover img {
   }
   button.submit {
     margin-top: 2.2rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  body {
+    padding: 8.5rem 28.1rem;
   }
 }
 .active {

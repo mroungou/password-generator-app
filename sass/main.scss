@@ -45,6 +45,20 @@ h1 {
         width: 100%;
     }
 
+    .copied {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        
+        #copied-text {
+            text-transform: uppercase;
+            color: c.$neonGreen;
+            font-size: 1.125rem;
+            opacity: 0;
+            transition: .25s opacity ease-in;
+        }
+    }
+
     img {
         width: 17.5px;
         height: 20px;
@@ -317,6 +331,14 @@ button.submit {
 
     button.submit {
         margin-top: 2.2rem;
+    }
+}
+
+// desktop version 
+
+@media screen and (min-width: 1440px) {
+    body {
+        padding: 8.5rem 28.1rem;
     }
 }
 
