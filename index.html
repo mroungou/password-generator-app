@@ -13,7 +13,7 @@
     <main>
         <h1>Password Generator</h1>
         <div class="output-div"><span class="output" id="output">P4$5W0rD!</span> <div class="copied"><span class="copied-text" id="copied-text">copied</span><img src="./assets/images/icon-copy.svg" alt="Copy Password" class="copy" id="copy"></div></div>
-        <form action="" class="form" id="form">
+        <form action="./action.php" class="form" id="form">
             <div class="char-slider">
                 <p>Character Length <span class="password-length" id="password-length">0</span></p>
                 <label for="slider">
@@ -25,13 +25,13 @@
                     <input type="checkbox" name="uppercase" value="uppercase" id="uppercase">Include Uppercase Letters</input>
                 </label>
                 <label for="lowercase" class="form-control">
-                    <input type="checkbox" name="lowercase value="lowercase" id="lowercase">Include Lowercase Letters</input>
+                    <input type="checkbox" name="lowercase" value="lowercase" id="lowercase">Include Lowercase Letters</input>
                 </label>
                 <label for="numbers" class="form-control">
-                    <input type="checkbox" name="numbers value="numbers" id="numbers">Include Numbers</input>
+                    <input type="checkbox" name="numbers" value="numbers" id="numbers">Include Numbers</input>
                 </label>
                 <label for="symbols" class="form-control">
-                    <input type="checkbox" name="symbols value="symbols" id="symbols">Include Symbols</input>
+                    <input type="checkbox" name="symbols" value="symbols" id="symbols">Include Symbols</input>
                 </label>
             </div>
             <div class="strength-div">Strength <div class="level" id="level"><span class="text" id="text"></span><div class="strength-indicator" id="strength-indicator"><span class="strength-bar"></span><span class="strength-bar"></span><span class="strength-bar"></span><span class="strength-bar"></span></div></div></div>
