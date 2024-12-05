@@ -56,6 +56,10 @@ h1 {
   width: 17.5px;
   height: 20px;
 }
+.output-div img:hover {
+  cursor: pointer;
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(209deg) brightness(102%) contrast(101%);
+}
 
 .form {
   background: rgb(36, 35, 44);
@@ -166,6 +170,7 @@ h1 {
 .options input[type=checkbox]:hover {
   border: 2px solid rgb(164, 255, 175);
   cursor: pointer;
+  transition: 0.25s ease-in;
 }
 .options input[type=checkbox]:checked {
   border: none;
@@ -201,6 +206,7 @@ h1 {
   align-items: center;
   gap: 1rem;
   color: rgb(230, 229, 234);
+  transition: 0.5s ease-in;
 }
 .strength-div .strength-indicator {
   display: flex;
@@ -232,6 +238,7 @@ button.submit:hover {
   background: none;
   border: 1px solid rgb(164, 255, 175);
   color: rgb(164, 255, 175);
+  transition: 0.25s ease-in;
 }
 button.submit:hover img {
   filter: brightness(0) saturate(100%) invert(97%) sepia(86%) saturate(682%) hue-rotate(53deg) brightness(106%) contrast(101%);
@@ -279,6 +286,7 @@ button.submit:hover img {
 @media screen and (min-width: 1440px) {
   body {
     padding: 8.5rem 28.1rem;
+    height: auto;
   }
 }
 .active {
